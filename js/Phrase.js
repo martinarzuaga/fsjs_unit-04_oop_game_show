@@ -7,6 +7,9 @@ class Phrase {
         this.phrase = phrase.toLowerCase();
     }
 
+    /**
+     * Display phrase on game board
+     * */
     addPhraseToDisplay(){
         const randomPhrase = game.getRandomPhrase().phrase.split('')
         const ul = document.getElementById('phrase').firstElementChild
@@ -25,5 +28,29 @@ class Phrase {
                 ul.appendChild(li)
             }
         })
+    }
+
+   /**
+    * Checks if passed letter is in phrase
+    * @param {string} letter - Letter to check
+    */
+    checkLetter(letter){
+        let letters = game.activePhrase.phrase.split('')
+        let counter = 0
+
+        letters.forEach( item => {
+            if (item === letter) {
+                console.log(true)
+            }
+        })
+        // return counter
+    }
+
+    /**
+     * Display passed letter on screen after a match is found
+     * @param {string} letter - Letter to display
+     */
+    showMatchedLetter(letter) {
+
     }
 }
