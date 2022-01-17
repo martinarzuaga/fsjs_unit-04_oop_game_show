@@ -40,7 +40,7 @@ class Phrase {
 
         letters.forEach( item => {
             if (item === letter) {
-                console.log(true)
+                this.showMatchedLetter(letter)
             }
         })
         // return counter
@@ -51,6 +51,13 @@ class Phrase {
      * @param {string} letter - Letter to display
      */
     showMatchedLetter(letter) {
+        let letters = document.querySelectorAll('.letter')
 
+        letters.forEach(item => {
+            if (item.textContent === letter) {
+                item.classList.remove('hide')
+                item.classList.add('show')
+            }
+        })
     }
 }
